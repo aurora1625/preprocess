@@ -42,6 +42,17 @@ bin/dedupe
 deduplicates text at the line level.
 
 ```
+bin/dedupe_pair
+```
+deduplicates parallel data at the line level. Two lines are considered being duplicates if both source lines are identical and both target lines are identical. 
+
+```
+bin/remove_overlaps
+```
+removes all lines from a file that are also present in another file.
+
+
+```
 bin/remove_long_lines
 ```
 removes lines longer than 2000 characters. 

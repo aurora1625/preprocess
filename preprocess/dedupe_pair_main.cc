@@ -2,7 +2,7 @@
 #include "preprocess/parallel.hh"
 
 
-class Dedupe {
+class DedupePair {
   public:
     bool operator()(const StringPiece &line) {
       Entry entry;
@@ -23,6 +23,6 @@ class Dedupe {
 
 
 int main(int argc, char *argv[]) {
-  Dedupe dedupe;
-  return FilterParallel(dedupe, false, argc, argv);
+  DedupePair dedupe;
+  return FilterParallel(dedupe, true, argc, argv);
 }

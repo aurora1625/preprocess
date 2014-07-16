@@ -33,9 +33,14 @@ struct SelectLatin {
     if (static_cast<float>(counts[USCRIPT_LATIN]) < total * 0.5) return false;
     return true;
   }
+
+  void AddLine(const StringPiece &line) {
+    this->operator()(line);
+  }
+ 
 };
 
 int main(int argc, char *argv[]) {
   SelectLatin process;
-  return FilterParallel(process, argc, argv);
+  return FilterParallel(process, false, argc, argv);
 }
